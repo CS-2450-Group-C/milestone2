@@ -4,19 +4,19 @@ There is temporary pseudo code that will be implemented once the specifics of th
 (i.e. if the accumulator and memory is in the machine class."""
 
 def add(memory_index):
-    # Example call: accumulator_value = arithmetic.add(memory_index)
+    # Example call: arithmetic.add(memory_index)
     
     # TEMPORARY PSEUDO CODE: accumulator.value = accumulator.value + memory[memory_index]
     pass
     
 def subtract(memory_index):
-    # Example call: accumulator_value = arithmetic.subtract(memory_index)
+    # Example call: arithmetic.subtract(memory_index)
     
     # TEMPORARY PSEUDO CODE: accumulator.value = accumulator.value - memory[memory_index]
     pass
 
 def divide(memory_index):
-    # Example call: accumulator_value = arithmetic.divide(memory_index)
+    # Example call: rithmetic.divide(memory_index)
     # NOTE: We must decide how to handle quotients that have decimal points...
     # for now we will just do floor division (//), removing any decimal values.
     
@@ -24,7 +24,7 @@ def divide(memory_index):
     pass
 
 def multiply(memory_index):
-    # Example call: accumulator_value = arithmetic.multiply(memory_index)
+    # Example call: arithmetic.multiply(memory_index)
     
     # TEMPORARY PSEUDO CODE: accumulator.value = accumulator.value * memory[memory_index]
     pass
