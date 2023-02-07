@@ -2,8 +2,6 @@
 input from the user and store it in memory, or write a word
 from memory to the screen."""
 
-import parse from parse.py
-
 def read(memory_index):
     # Read takes user input and stores that in a location in memory
     new_word = input("Enter a new four-digit word. Ex: +2156, -4328: ")
