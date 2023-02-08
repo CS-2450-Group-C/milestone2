@@ -16,7 +16,10 @@ class Machine:
         # 
         pass
     
-    # Should the functions just be class methods?
+    def debug_get_accumulator(self):
+        '''Returns current value of the machine accumulator for debuging and
+        testing puposes.'''
+        return self._accumulator
 
     def read(self, memory_index):
         # Read takes user input and stores that in a location in memory
