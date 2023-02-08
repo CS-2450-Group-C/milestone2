@@ -61,7 +61,7 @@ class Machine:
         
     def subtract(self, memory_index):
         # Subtract word from memory from the word in accumulator
-        self._accumulator += self.memory[memory_index]
+        self._accumulator -= self.memory[memory_index]
         
     def divide(self, memory_index):
         # Divide word in accumulator by word in a memory index
@@ -70,5 +70,5 @@ class Machine:
         
     def multiply(self, memory_index):
         # Multiply word in accumulator by word in a memory index
-        self._accumultaor *= self.memory[memory_index]
+        self._accumulator *= self.memory[memory_index]
 
