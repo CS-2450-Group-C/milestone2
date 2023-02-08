@@ -15,3 +15,15 @@ def store(memory_index):
 
 def main():
     """For testing purpose"""
+    output = "+12"
+    print(output.ljust(5, "0"))
+    # def write(self, memory_index):
+    #     # Write a word from a location in memory to the screen
+    #     word = self.memory[memory_index]
+    #     output = ""
+    #     if word < 0:
+    #         output = "-" + str(word)
+    #     else:
+    #         output = "+" + str(word)
+
+    #     print(output.ljust(5, "0"))
