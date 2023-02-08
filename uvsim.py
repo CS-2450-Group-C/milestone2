@@ -4,6 +4,7 @@ class Machine:
         self._accumulator = 0000
         self._program_counter = 0
         self._memory = [0000] * 100
+        self._running = True
         for i, value in enumerate(init_mem):
             self._memory[i] = value
         print(self._memory)
@@ -37,7 +38,9 @@ class Machine:
             return -1
         return 0
 
-    
+    def is_running(self):
+        return self._running
+
     def debug_get_accumulator(self):
         '''Returns current value of the machine accumulator for debuging and
         testing puposes.'''
