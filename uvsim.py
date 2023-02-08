@@ -8,9 +8,14 @@ class Machine:
             self._memory[i] = value
         print(self._memory)
 
-    def tick(pc_value = None):
-        # 
-        pass
+    def tick(self):
+        '''Obtains the next operation, increments the program counter, and
+        passes the operation to the interpret_instruction() method for further
+        processing.'''
+        operation_address = self._program_counter
+        operation = self._memory[operation_address]
+        self._program_counter += 1
+        self.interpret_instruction(operation)
     
     def interpret_instruction(instruction):
         # 
