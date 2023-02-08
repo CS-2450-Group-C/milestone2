@@ -12,14 +12,31 @@ class Machine:
         '''Obtains the next operation, increments the program counter, and
         passes the operation to the interpret_instruction() method for further
         processing.'''
+        self._running = True
         operation_address = self._program_counter
         operation = self._memory[operation_address]
         self._program_counter += 1
-        self.interpret_instruction(operation)
+        if (self.interpret_instruction(operation) < 0):
+            print(f"Error: Invalid instruction \"{operation}\" at memory address {operation_address}")
+            print("Halting program.")
+            self._running = False
     
-    def interpret_instruction(instruction):
-        # 
-        pass
+    def interpret_instruction(self, instruction):
+        if (instruction < 0):
+            return -1
+        str_instruction = str(instruction)
+        if str_instruction[0] == "1":
+            self.op_io(str_instruction[1], int(str_instruction[2:]))
+        elif str_instruction[0] == "2":
+            self.op_ls(str_instruction[1], int(str_instruction[2:]))
+        elif str_instruction[0] == "3":
+            self.op_ar(str_instruction[1], int(str_instruction[2:]))
+        elif str_instruction[0] == "4":
+            self.op_br(str_instruction[1], int(str_instruction[2:]))
+        else:
+            return -1
+        return 0
+
     
     def debug_get_accumulator(self):
         '''Returns current value of the machine accumulator for debuging and
