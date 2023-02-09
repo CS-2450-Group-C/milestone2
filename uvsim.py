@@ -1,4 +1,3 @@
-
 class Machine:
     def __init__(self, init_mem):
         self._accumulator = 0
@@ -50,38 +49,38 @@ class Machine:
 
 
     def op_io(self, op_code, memory_index):
-        if op_code == 0:
+        if op_code == "0":
             self.read(memory_index)
-        elif op_code == 1:
+        elif op_code == "1":
             self.write(memory_index)
 
 
     def op_ls(self, op_code, memory_index):
-        if op_code == 0:
+        if op_code == "0":
             self.load(memory_index)
-        elif op_code == 1:
+        elif op_code == "1":
             self.store(memory_index)
 
 
     def op_ar(self, op_code, memory_index):
-        if op_code == 0:
+        if op_code == "0":
             self.add(memory_index)
-        elif op_code == 1:
+        elif op_code == "1":
             self.subtract(memory_index)
-        elif op_code == 2:
+        elif op_code == "2":
             self.divide(memory_index)
-        elif op_code == 3:
+        elif op_code == "3":
             self.multiply(memory_index)
 
 
     def op_br(self, op_code, memory_index):
-        if op_code == 0:
+        if op_code == "0":
             self.branch(memory_index)
-        elif op_code == 1:
+        elif op_code == "1":
             self.branch_neg(memory_index)
-        elif op_code == 2:
+        elif op_code == "2":
             self.branch_zero(memory_index)
-        elif op_code == 3:
+        elif op_code == "3":
             self.halt(memory_index)
 
 
