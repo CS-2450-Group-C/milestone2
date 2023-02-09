@@ -82,11 +82,11 @@ class Machine:
         elif op_code == "2":
             self.branch_zero(memory_index)
         elif op_code == "3":
-            self.halt(memory_index)
+            self.halt()
 
     def read(self, memory_index):
         # Read takes user input and stores that in a location in memory
-        new_word = input("Enter a new four-digit word. Ex: +2156, -4328: ")
+        new_word = input(f"Enter a new four-digit word to store in memory location {memory_index}. Ex: +2156, -4328: ")
         word_num = 0
         # If the user input exceeds the maximum word length
         if len(new_word) > 5 or len(new_word) < 4:
@@ -114,16 +114,20 @@ class Machine:
     def write(self, memory_index):
         # Write a word from a location in memory to the screen
         word = self._memory[memory_index]
-        output = ""
+        output = str(abs(word))
+        
+        # Pad the number with zeroes until their are four digits
+        output = output.rjust(4, "0")
         
         # Add a positive or negative symbol depending upon the number
         if word < 0:
-            output = "-" + str(word)
+            output = "-" + output
         else:
-            output = "+" + str(word)
+            output = "+" + output
 
-        # Pad the number with zeroes until their are four digits
-        print(output.ljust(5, "0"))
+        print(output)
+
+       
 
 
     def load(self, memory_index):
@@ -171,24 +175,5 @@ class Machine:
 
 
     def halt(self):
-        # Stop the program until the user indicates if they want
-        # to quit the program or not
-        halted = True
-        while halted:
-            # Validate the user input data
-            user_continue = input('Program halted. Continue? (y/n): ')
-            if len(user_continue) > 1:
-                print("Please input either 'y' or 'n' ")
-                continue
-            
-            user_continue.lower()
-            if user_continue not in 'yn':
-                print("Please input either 'y' or 'n' ")
-                continue
-
-            if user_continue == 'y':
-                halted = False
-        
-            # Exit the program by setting the program counter 
-            # outside of memory
-            self._program_counter = len(self._memory)
+        # Stop the program
+        self._running = False

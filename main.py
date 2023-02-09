@@ -21,8 +21,7 @@ def main():
 
     while (machine.is_running()):
         machine.tick()
-
-    
+ 
 
 if __name__ == "__main__":
     main()
