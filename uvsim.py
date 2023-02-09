@@ -135,16 +135,16 @@ class Machine:
     
     def add(self, memory_index):
         # Add word from memory to word in accumulator
-        self._accumulator += self.memory[memory_index]
+        self._accumulator += self._memory[memory_index]
         
     def subtract(self, memory_index):
         # Subtract word from memory from the word in accumulator
-        self._accumulator -= self.memory[memory_index]
+        self._accumulator -= self._memory[memory_index]
         
     def divide(self, memory_index):
         # Divide word in accumulator by word in a memory index
         # NOTE: This function does floor division, which removes any decimal values
-        self._accumulator //= self.memory[memory_index]
+        self._accumulator //= self._memory[memory_index]
 
 
     def multiply(self, memory_index):
