@@ -20,7 +20,7 @@ def main():
     machine = Machine(memory)
 
     # uncomment when ready
-    # while (machine.running):
+    # while (machine._running):
     #     machine.tick()
 
     
