@@ -131,7 +131,7 @@ class Machine:
 
     def store(self, memory_index):
         # Store what is in the accumulator into a location in memory
-        self.memory[memory_index] = self._accumulator
+        self._memory[memory_index] = self._accumulator
     
     def add(self, memory_index):
         # Add word from memory to word in accumulator
