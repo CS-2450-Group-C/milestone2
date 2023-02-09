@@ -19,11 +19,9 @@ def main():
     # Create new machine from parsed memory
     machine = Machine(memory)
 
-    # uncomment when ready
-    # while (machine._running):
-    #     machine.tick()
-
-    
+    while (machine.is_running()):
+        machine.tick()
+ 
 
 if __name__ == "__main__":
     main()

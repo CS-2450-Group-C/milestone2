@@ -25,6 +25,7 @@ class Machine:
         if (instruction < 0):
             return -1
         str_instruction = str(instruction)
+        
         # Calls the different instruction set functions with 
         # (opcode, memory_index) as arguments
         if str_instruction[0] == "1":
@@ -83,7 +84,6 @@ class Machine:
         elif op_code == "3":
             self.halt()
 
-
     def read(self, memory_index):
         # Read takes user input and stores that in a location in memory
         new_word = input(f"Enter a new four-digit word to store in memory location {memory_index}. Ex: +2156, -4328: ")
@@ -132,27 +132,23 @@ class Machine:
 
     def load(self, memory_index):
         self._accumulator = self._memory[memory_index]
-    
 
     def store(self, memory_index):
         # Store what is in the accumulator into a location in memory
         self._memory[memory_index] = self._accumulator
     
-
     def add(self, memory_index):
         # Add word from memory to word in accumulator
-        self._accumulator += self.memory[memory_index]
-
-     
+        self._accumulator += self._memory[memory_index]
+        
     def subtract(self, memory_index):
         # Subtract word from memory from the word in accumulator
-        self._accumulator -= self.memory[memory_index]
-
-
+        self._accumulator -= self._memory[memory_index]
+        
     def divide(self, memory_index):
         # Divide word in accumulator by word in a memory index
         # NOTE: This function does floor division, which removes any decimal values
-        self._accumulator //= self.memory[memory_index]
+        self._accumulator //= self._memory[memory_index]
 
 
     def multiply(self, memory_index):
