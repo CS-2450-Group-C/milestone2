@@ -1,3 +1,5 @@
+'''Module containing the parse function'''
+
 import re
 from pathlib import Path
 
@@ -13,8 +15,8 @@ def parse(file_name):
     with open(file_name, 'r', encoding='UTF-8') as reader:
         lines = reader.readlines()
         # Read file line by line
-        for i in range(len(lines)):
-            regex = re.search("^\s*((\+|-|)(\d+)|)\s*$", lines[i])
+        for i, line in enumerate(lines):
+            regex = re.search("^\s*((\+|-|)(\d+)|)\s*$", line)
             # Valid Input
             if regex:
                 # Fill memory (empty lines and oversized ints default to 0)
