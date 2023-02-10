@@ -64,10 +64,20 @@ class Machine:
         '''Returns the current running state of the machine instance'''
         return self._running
 
+    def debug_get_program_counter(self):
+        '''Returns current value of the machine program counter for debuging and
+        testing puposes.'''
+        return self._program_counter
+
     def debug_get_accumulator(self):
         '''Returns current value of the machine accumulator for debuging and
         testing puposes.'''
         return self._accumulator
+
+    def debug_set_accumulator(self, val):
+        '''Sets current value of the machine accumulator for testing 
+        puposes.'''
+        self._accumulator = val
 
     def op_io(self, op_code, memory_index):
         '''A branching method of all the input/output operations.
