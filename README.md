@@ -27,6 +27,9 @@ A 4-digit word can be an instruction. The two rightmost digits indicate the spec
 ## How to use
 The UVSim can load 4-digit words from a __.txt__ file into memory, starting at address 00. Ensure all files are downloaded into the same directory. From that directory, call ___python main.py fileName.txt___
 
+## How to test
+To test the UVSim, you must have the Python module Pytest installed. To install pytest, type the command `pip install pytest`. Once pytest is installed, navigate to the folder with the UVSim files and the unit_test.py file. Then run the command `pytest unit_test.py`. This will run tests in the file and alert you to any failed tests.
+
 ## Accepted 4-digit Word Formats
 <pre>+0123
 -0123
