@@ -132,9 +132,8 @@ address {operation_address}")
 
     def read(self, memory_index):
         '''Read takes user input and stores that in a location in memory'''
-        new_word = input(
-            f"Enter a new four-digit word to store in memory location \
-                {memory_index}. Ex: +2156, -4328: ")
+        new_word = input(f"Enter a new four-digit word to store in memory location \
+{memory_index}. Ex: +2156, -4328: ")
         word_num = 0
         # If the user input exceeds the maximum word length
         if len(new_word) > 5 or len(new_word) < 4:
