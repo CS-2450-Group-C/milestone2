@@ -35,9 +35,8 @@ class Machine:
         operation = self._memory[operation_address]
         self._program_counter += 1
         if self.interpret_instruction(operation) < 0:
-            print(
-                f"Error: Invalid instruction \"{operation}\" at memory \
-                    address {operation_address}")
+            print(f"Error: Invalid instruction \"{operation}\" at memory \
+address {operation_address}")
             print("Halting program.")
             self._running = False
 
